@@ -34,5 +34,45 @@ Navegue até a pasta do servidor, instale as dependências e configure o banco d
 ```bash
 cd back
 npm install 
+```
+Crie um arquivo .env na raiz da pasta backend e configure a URL do seu banco de dados MySQL com o seguinte conteudo:
 
-Crie um arquivo .env na raiz da pasta backend e configure a URL do seu banco de dados MySQL
+DATABASE_URL="mysql://usuario:senha@localhost:3306/aerocode_db"
+
+Em seguida, execute as migrações para criar as tabelas e o seed para popular o banco com dados iniciais:
+
+```bash
+
+npx prisma db push
+npx prisma db seed
+```
+Inicie o servidor:
+
+```bash
+
+npx ts-node src/server.ts
+O servidor rodará em: http://localhost:3001
+```
+
+2. Configuração do Front-end
+Abra um novo terminal, navegue até a pasta do front-end e instale as dependências.
+
+```Bash
+
+cd front
+npm install
+```
+Inicie a aplicação web:
+
+```Bash
+
+npm run dev
+A aplicação rodará em: http://localhost:3000
+```
+
+Acesso ao Sistema
+Após iniciar a aplicação, utilize as seguintes credenciais padrão para acesso administrativo:
+
+Usuário: admin
+
+Senha: 123
