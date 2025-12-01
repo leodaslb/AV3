@@ -1,0 +1,124 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+enum TipoAeronave {
+  COMERCIAL
+  MILITAR
+
+}
+
+enum TipoPeca {
+  NACIONAL
+  IMPORTADA
+}
+
+enum StatusPeca {
+  EM_PRODUCAO
+  EM_TRANSPORTE
+  PRONTA
+}
+
+enum StatusEtapa {
+  PENDENTE
+  ANDAMENTO
+  CONCLUIDA
+}
+
+enum NivelPermissao {
+  ADMINISTRADOR
+  ENGENHEIRO
+  OPERADOR
+}
+
+
+enum TipoTeste {
+  ELETRICO
+  HIDRAULICO
+  AERODINAMICO
+}
+
+enum ResultadoTeste {
+  APROVADO
+  REPROVADO
+  PENDENTE
+}
+
+
+
+model Aeronave {
+  id         String       @id
+  modelo     String
+  tipo       TipoAeronave
+  capacidade Int
+  
+  pecas      Peca[]
+  etapas     Etapa[]
+  testes     Teste[]
+
+  criadoEm   DateTime     @default(now())
+  atualizadoEm DateTime   @updatedAt
+
+  @@map("aeronaves")
+}
+
+model Peca {
+  id         String     @id @default(uuid())
+  nome       String
+  tipo       TipoPeca
+  fornecedor String
+
+  status     StatusPeca @default(PRONTA)
+
+  aeronaveId String?
+  aeronave   Aeronave?  @relation(fields: [aeronaveId], references: [id])
+
+  @@map("pecas")
+}
+
+model Etapa {
+  id     String      @id @default(uuid())
+  nome   String
+  prazo  String
+  status StatusEtapa @default(PENDENTE)
+
+  aeronaveId String
+  aeronave   Aeronave @relation(fields: [aeronaveId], references: [id])
+
+  funcionarios Funcionario[]
+
+  @@map("etapas")
+}
+
+model Teste {
+  id        String         @id @default(uuid())
+  tipo      TipoTeste
+  resultado ResultadoTeste @default(PENDENTE)
+
+  aeronaveId String
+  aeronave   Aeronave @relation(fields: [aeronaveId], references: [id])
+
+  @@map("testes")
+}
+
+model Funcionario {
+  id             String         @id
+  nome           String
+  telefone       String
+  endereco       String?
+  usuario        String         @unique
+  senha          String
+  nivelPermissao NivelPermissao 
+
+  etapas Etapa[]
+
+  @@map("funcionarios")
+}

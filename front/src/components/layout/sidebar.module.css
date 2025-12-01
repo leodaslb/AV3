@@ -1,0 +1,31 @@
+.container{
+  background-color: #222;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  max-width: 270px;
+}
+.menu{
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  width: 100%;
+  font-weight: 600;
+}
+.menuItem{
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+
+  
+}
+.title{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.active{
+  color: #6b6b69;
+}

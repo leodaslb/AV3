@@ -1,0 +1,237 @@
+
+
+.container {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #303030;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+ 
+}
+.voltar{
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+  color: #0070f3;
+  font-weight: 500;
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+
+.navAbas {
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  margin-top: 1.5rem;
+  color: #555;
+}
+
+.navAbas button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.navAbas button:hover {
+  background-color: #f9f9f9;
+}
+
+.abaAtiva {
+  color: #000000;
+  font-weight: 700;
+  border-bottom-color: #000000 !important; 
+}
+.abaInativa {
+  color: #777777;
+}
+
+
+.mainContent {
+  padding-top: 1.5rem;
+}
+
+.abaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.abaHeader h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tabela th,
+.tabela td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.tabela td button {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+.dropdownStatus {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 0.9rem;
+  color: #555;
+}
+.acoes {
+  display: flex;
+  gap: 8px; 
+  flex-wrap: wrap;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modalContent {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  min-width: 500px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modalHeader {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modalHeader p {
+  margin: 4px 0 0;
+  color: #555;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+.modalCloseButton:hover {
+  color: #000;
+}
+
+.modalBody h4 {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+
+.funcionarioList {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.funcionarioItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.funcionarioItem:last-child {
+  border-bottom: none;
+}
+
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box; 
+}
+
+.modalSaveButton {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+
+}

@@ -1,0 +1,63 @@
+.container{
+ 
+  color: rgb(105, 105, 105);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.table{
+  margin-top: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #444;
+}
+.table th,
+.table td{
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+.table th{
+    background-color: #f2f2f2;
+}
+.modalOverlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  z-index: 1000; 
+}
+
+
+.modalContent {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  min-width: 500px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative; 
+}
+.linhaClicavel {
+  cursor: pointer;
+}
+.linhaClicavel:hover {
+  background-color: #f9f9f9;
+}
